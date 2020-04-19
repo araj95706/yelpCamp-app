@@ -4,27 +4,30 @@
         <div class="container">
             <h1>Camp Grounds</h1>
             <p>
-               <h4> Hand-Picked camping destinations just a click away </h4>
+                <h4> Hand-Picked camping destinations just a click away </h4>
             </p>
             <p class="btn btn-secondary btn-lg">
                 <a href="/">Home</a>
             </p>
             <p class="btn btn-secondary btn-lg">
                 <a href="/campGrounds/new">Add CampGround</a>
-            </p>        
+            </p>
         </div>
     </div>
     <div class="row" style="display: flex; flex-wrap: wrap;">
-            <% campGrounds.forEach(function(campGround){ %>
-                <div class="col-md-3 col-sm-6"> 
-                    <div class="thumbnail">
-                        <img src="<%= campGround.image %>"> 
-                        <div class="caption text-center">
-                            <h4><%= campGround.name %></h4>
-                        </div>
-                    </div>
+        <% var campGroundsArray = Object.values(campGrounds) %>
+        <% campGroundsArray.forEach(function(campGround){ %>
+        <div class="col-md-3 col-sm-6">
+            <div class="thumbnail">
+                <img src="<%= campGround.image %>">
+                <div class="caption text-center">
+                    <h4><%= campGround.name %></h4>
                 </div>
-            <% }); %>
+            </div>
+        </div>
     </div>
+</div>
+<% }); %>
+</div>
 </div>
 <%- include("partials/footer") %>

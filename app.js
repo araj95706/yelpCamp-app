@@ -23,13 +23,20 @@ app.get("/", (req, res) => {
 });
 
 app.get("/campGrounds", (req, res) => {
-  res.render("campGrounds", { campGrounds: campGrounds });
+  campGrounds.find({}, (err, allcampGrounds) => {
+    if (err) {
+      console.log(err);
+    } else {
+      // var campGroundsArray = Object.values(campGrounds);
+      res.render("campGrounds", { campGrounds: allcampGrounds });
+    }
+  });
 });
 
 app.post("/campGrounds", (req, res) => {
-  var name1 = req.body.name;
-  var image1 = req.body.image;
-  campGrounds.insertMany({ name: name1, image: image1 });
+  var name = req.body.name;
+  var image = req.body.image;
+  campGrounds.insertMany({ name: name, image: image });
 
   res.redirect("/campGrounds");
 });
@@ -39,5 +46,6 @@ app.get("/campGrounds/new", (req, res) => {
 });
 
 var server = app.listen("4444", () => {
+  git;
   console.log("the sever has been started.");
 });
