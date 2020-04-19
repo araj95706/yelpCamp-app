@@ -1,29 +1,35 @@
 <%- include("partials/header") %>
 
 <div class="container">
-    <div class="jumbotron">
-        <h1>ADD A NEW CAMP GROUND</h1>
+  <div class="jumbotron">
+    <h1>ADD A NEW CAMP GROUND</h1>
+  </div>
+
+  <form method="post" action="/campGrounds">
+    <div class="form-group">
+      <label for="campGroundName">
+        <h4>Camp Ground Name</h4>
+      </label>
+      <input type="text" class="form-control" name="name">
     </div>
+    <div class="form-group">
+      <label for="campGroundImage">
+        <h4>Camp Ground Image URL</h4>
+      </label>
+      <input type="url" class="form-control" name="image">
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
 
-    <form method="post" action="/campGrounds">
-        <div class="form-group">
-          <label for="campGroundName"> <h4>Camp Ground Name</h4> </label>
-          <input type="text" class="form-control" name="name">
-        </div>
-        <div class="form-group">
-          <label for="campGroundImage"> <h4>Camp Ground Image URL</h4> </label>
-          <input type="text" class="form-control" name="image">
-        </div>
-        <button type="submit" class="btn btn-primary">Submit</button>
-      </form>
-
-    <!-- <form method="post" action="/campGrounds">
+  <!-- <form method="post" action="/campGrounds">
         <input type="text" name="name" placeholder="name">
         <input type="text" name="image" placeholder="image url">
         <button class="btn btn-primary btn-sm">SUBMIT</button>
     </form> -->
-    <br>
-    <a href="/"> <h3>Home</h3> </a>
+  <br>
+  <a href="/">
+    <h3>Home</h3>
+  </a>
 
 </div>
 <%- include("partials/footer") %>
